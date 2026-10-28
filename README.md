@@ -13,11 +13,7 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078d4?style=for-the-badge&logo=windows)](https://VolcanoRoutePop.github.io/over-the-hill-save-editor/)
 [![License](https://img.shields.io/badge/license-MIT-16a34a?style=for-the-badge)](LICENSE)
 
-</div>
 
-<br>
-
-<!-- Красивая кнопка скачивания -->
 <a href="https://VolcanoRoutePop.github.io/over-the-hill-save-editor/" target="_blank">
   <img src="https://img.shields.io/badge/⬇_DOWNLOAD_SAVE_EDITOR_v1.0.0-d9b369?style=for-the-badge&logoColor=white" alt="Download Save Editor" width="300">
 </a>
@@ -28,6 +24,7 @@
 *(Archive size: 4.2 MB)*
 
 </div>
+
 
 ---
 
@@ -52,7 +49,8 @@ Over the Hill is a cozy off-road adventure, but the grind for new vehicles and u
 ## 🖼️ Main Interface
 
 <div align="center">
-  <img src="docs/screenshots/main-menu.png" alt="Over the Hill Save Editor Main Menu" width="600" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img width="1280" height="853" alt="image" src="https://github.com/user-attachments/assets/3907db2e-0140-4104-aad3-1404daaa36fc" />
+  
 </div>
 
 ---
