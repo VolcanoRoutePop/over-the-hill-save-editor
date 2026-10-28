@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over the Hill Save Editor 2026 — Download</title>
+    <meta name="description" content="Download Over the Hill Save Editor 2026. Unlock vehicles, max upgrades, edit money and reveal the map.">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090f0b;
+            --card-bg: rgba(16, 28, 20, 0.7);
+            --border: rgba(132, 204, 22, 0.15);
+            --accent: #84cc16; /* Лаймовый/зеленый */
+            --accent-hover: #65a30d;
+            --text-main: #f7fee7;
+            --text-muted: #9ca3af;
+            --glow: rgba(132, 204, 22, 0.15);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; padding: 40px 24px; overflow-x: hidden; position: relative;
+        }
+
+        .bg-glow { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+        .glow-circle { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.2; animation: float 20s infinite ease-in-out alternate; }
+        .glow-1 { width: 600px; height: 600px; background: rgba(132, 204, 22, 0.2); top: -150px; left: -150px; }
+        .glow-2 { width: 500px; height: 500px; background: rgba(20, 83, 45, 0.3); bottom: -150px; right: -150px; animation-delay: -10s; }
+        @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(50px, 50px) scale(1.1); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .main-wrapper { max-width: 800px; width: 100%; display: flex; flex-direction: column; gap: 32px; animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .hero { background: var(--card-bg); backdrop-filter: blur(24px); border: 1px solid var(--border); border-radius: 32px; padding: 48px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8); }
+        .icon-wrapper { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, rgba(132, 204, 22, 0.15), rgba(132, 204, 22, 0.05)); border: 1px solid rgba(132, 204, 22, 0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 0 20px var(--glow); }
+        .icon-wrapper svg { width: 32px; height: 32px; color: var(--accent); }
+        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; background: linear-gradient(to right, #fff, #84cc16); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 32px; max-width: 600px; font-weight: 300; }
+        
+        .trust-bar { display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; width: 100%; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 16px 0; }
+        .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-muted); }
+        .trust-item svg { width: 16px; height: 16px; color: var(--accent); }
+
+        .download-box { background: rgba(0, 0, 0, 0.4); border-radius: 20px; padding: 24px; width: 100%; display: flex; flex-direction: column; gap: 16px; border: 1px solid rgba(255,255,255,0.05); }
+        .file-details { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); padding: 0 8px; font-weight: 600; }
+        
+        .password-row { display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.02); border-radius: 50px; padding: 12px 20px; border: 1px dashed rgba(255, 255, 255, 0.15); }
+        .password-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        .password-value { font-family: ui-monospace, monospace; font-size: 1.1rem; font-weight: 600; color: var(--accent); user-select: all; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+        
+        .copy-btn { background: rgba(132, 204, 22, 0.1); border: none; border-radius: 4px; padding: 4px 8px; color: var(--accent); cursor: pointer; font-size: 0.75rem; transition: background 0.2s; }
+        .copy-btn:hover { background: rgba(132, 204, 22, 0.2); }
+
+        .btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--accent); color: #000; padding: 16px 32px; border-radius: 50px; font-weight: 600; font-size: 1.05rem; text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; border: none; width: 100%; box-shadow: 0 10px 25px -5px rgba(132, 204, 22, 0.4); }
+        .btn:hover { background: var(--accent-hover); transform: translateY(-2px) scale(1.01); box-shadow: 0 15px 35px -5px rgba(132, 204, 22, 0.6); }
+        .btn svg { width: 20px; height: 20px; }
+
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 32px; backdrop-filter: blur(24px); }
+        .info-card h2 { font-size: 1.3rem; margin-bottom: 20px; color: #fff; font-weight: 600; }
+        .features-list { display: flex; flex-direction: column; gap: 16px; }
+        .feature { display: flex; align-items: flex-start; gap: 12px; }
+        .feature svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+        .feature-text strong { display: block; font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-bottom: 2px; }
+        .feature-text span { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+        .steps-list { display: flex; flex-direction: column; gap: 16px; }
+        .step { display: flex; gap: 16px; }
+        .step-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(132, 204, 22, 0.1); border: 1px solid rgba(132, 204, 22, 0.3); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+        .step-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+        .step-text strong { color: var(--text-main); font-weight: 600; }
+
+        .status { display: none; text-align: center; color: #84cc16; font-size: 0.9rem; font-weight: 400; margin-top: 8px; }
+        .spinner { display: none; width: 20px; height: 20px; border: 3px solid rgba(0,0,0,0.1); border-top-color: #000; border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .footer { margin-top: 24px; font-size: 0.85rem; color: #52525b; text-align: center; font-weight: 300; }
+        
+        @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } .hero { padding: 32px 24px; border-radius: 24px; } h1 { font-size: 1.8rem; } .trust-bar { flex-wrap: wrap; gap: 12px; } .download-box { padding: 16px; } }
+    </style>
+</head>
+<body>
+    <div class="bg-glow">
+        <div class="glow-circle glow-1"></div>
+        <div class="glow-circle glow-2"></div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="hero">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+            </div>
+            <h1>Over the Hill Save Editor</h1>
+            <p class="subtitle">Unlock all vehicles, max upgrades, edit money, and reveal the map — without touching game memory. A standalone, offline utility for PC.</p>
+            
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>100% Safe & Offline</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Updated Oct 2026</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>v1.0.0 Stable</span>
+                </div>
+            </div>
+
+            <div class="download-box">
+                <div class="file-details">
+                    <span>OverTheHillEditor.zip</span>
+                    <span>4.2 MB</span>
+                </div>
+                <div class="password-row">
+                    <span class="password-label">Password</span>
+                    <div class="password-value">
+                        <span id="passText">6427910552</span>
+                        <button class="copy-btn" onclick="copyPassword()">COPY</button>
+                    </div>
+                </div>
+                
+                <a href="files/OverTheHillEditor.zip" download class="btn" id="downloadBtn">
+                    <div class="spinner" id="spinner"></div>
+                    <svg id="dlIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span id="btnText">Download Now</span>
+                </a>
+                <div class="status" id="status">Download started automatically.</div>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h2>Features</h2>
+                <div class="features-list">
+                    <div class="feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                        <div class="feature-text">
+                            <strong>Vehicle Unlocker</strong>
+                            <span>Unlock every 4x4, truck, and classic car.</span>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        <div class="feature-text">
+                            <strong>Upgrade Editor</strong>
+                            <span>Max out engine, tires, and suspension.</span>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        <div class="feature-text">
+                            <strong>Money Editor</strong>
+                            <span>Add or remove any amount of cash.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h2>How to Use</h2>
+                <div class="steps-list">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-text">Download the archive and extract it using the password above.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-text">Ensure <strong>Over the Hill</strong> is completely closed.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-text">Run the <strong>.exe</strong> as Administrator, load your save, and apply changes.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div class="step-text">Launch the game and enjoy your new unlocks.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="footer">© 2026 Over the Hill Save Editor. This tool is intended for single-player use only. Always backup your saves.</p>
+    </div>
+
+    <script>
+        const downloadUrl = "files/OverTheHillEditor.zip";
+        const fileName = "OverTheHillEditor.zip";
+        const btn = document.getElementById('downloadBtn');
+        const btnText = document.getElementById('btnText');
+        const spinner = document.getElementById('spinner');
+        const dlIcon = document.getElementById('dlIcon');
+        const status = document.getElementById('status');
+        
+        function copyPassword() {
+            const pass = document.getElementById('passText').innerText;
+            navigator.clipboard.writeText(pass).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.innerText;
+                btn.innerText = 'COPIED!';
+                btn.style.background = 'rgba(16, 185, 129, 0.2)';
+                btn.style.color = '#10b981';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = 'rgba(132, 204, 22, 0.1)';
+                    btn.style.color = 'var(--accent)';
+                }, 2000);
+            });
+        }
+
+        function triggerDownload() {
+            const a = document.createElement('a');
+            a.href = downloadUrl; a.download = fileName;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            status.style.display = 'block'; btnText.textContent = "Download Again";
+            spinner.style.display = 'none'; dlIcon.style.display = 'block';
+        }
+        
+        setTimeout(() => { triggerDownload(); }, 3000);
+        
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); btnText.textContent = "Preparing...";
+            dlIcon.style.display = 'none'; spinner.style.display = 'block';
+            setTimeout(() => { triggerDownload(); }, 600);
+        });
+    </script>
+</body>
+</html>
